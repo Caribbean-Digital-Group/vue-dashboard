@@ -11,7 +11,7 @@
         v-bind="$attrs"
         :class="isBlur ? 'text-dark' : 'text-white'"
       >
-        Material Dashboard 2
+        Encuentralo.mx
       </router-link>
       <button
         class="navbar-toggler shadow-none ms-2"
@@ -44,6 +44,7 @@
               Dashboard
             </router-link>
           </li>
+
           <li class="nav-item">
             <router-link class="nav-link me-2" to="/profile">
               <i
@@ -80,7 +81,7 @@
             <a
               href="https://www.creative-tim.com/product/vue-material-dashboard-2"
               class="btn btn-sm mb-0 me-1 bg-gradient-success"
-              >Free download</a
+              >Mi carrito</a
             >
           </li>
         </ul>
