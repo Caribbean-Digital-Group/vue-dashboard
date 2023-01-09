@@ -41,7 +41,8 @@
   </div>
 </template>
 
-<script>
+<script setup>
+import { onMounted } from "vue";
 // Header
 import BannerHeader from "@/components/Headers/BannerHeader.vue";
 // Search
@@ -50,28 +51,17 @@ import Search from "./components/store/Search.vue";
 import DefaultCardItem from "@/components/Cards/DefaultCardItem.vue";
 // Products
 import DefaultProductCard from "./components/store/Products/DefaultProductCard.vue";
+// API
+import useApi from "@/composables/useApi.js";
+const { getExample, getAllStores } = useApi();
 
-export default {
-  name: "profile-overview",
-  data() {
-    return {
-      showMenu: false,
-    };
-  },
-  components: {
-    BannerHeader,
-    Search,
-    DefaultCardItem,
-    DefaultProductCard,
-  },
-
-  mounted() {
-    this.$store.state.isAbsolute = true;
-  },
-  beforeUnmount() {
-    this.$store.state.isAbsolute = false;
-  },
-};
+onMounted(async () => {
+  console.log("Start...");
+  let result = await getExample();
+  console.log(result);
+  let data = await getAllStores();
+  console.log(data);
+});
 </script>
 <style scoped>
 .margin-default {
