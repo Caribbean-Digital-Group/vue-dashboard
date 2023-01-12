@@ -1,4 +1,9 @@
 <template>
+  <sidenav
+    :custom_class="color"
+    :class="[isRTL ? 'fixed-end' : 'fixed-start']"
+    v-if="showSidenav"
+  />
   <main
     class="main-content position-relative max-height-vh-100 h-100 overflow-x-hidden"
   >
@@ -19,6 +24,7 @@
   </main>
 </template>
 <script>
+import Sidenav from "./examples/Sidenav";
 import Navbar from "@/components/Navbars/DefaultNavbar.vue";
 import AppFooter from "@/components/Footers/DefaultFooter.vue";
 import { mapMutations, mapState } from "vuex";
@@ -26,6 +32,7 @@ import { mapMutations, mapState } from "vuex";
 export default {
   name: "App",
   components: {
+    Sidenav,
     Navbar,
     AppFooter,
   },
